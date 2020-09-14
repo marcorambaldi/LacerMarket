@@ -1,5 +1,7 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /contents
   # GET /contents.json
@@ -14,7 +16,7 @@ class ContentsController < ApplicationController
 
   # GET /contents/new
   def new
-    @content = Content.new
+    @content = current_user.contents.build
   end
 
   # GET /contents/1/edit
@@ -24,15 +26,13 @@ class ContentsController < ApplicationController
   # POST /contents
   # POST /contents.json
   def create
-    @content = Content.new(content_params)
+    @content = current_user.contents.build(content_params)
 
     respond_to do |format|
       if @content.save
         format.html { redirect_to @content, notice: 'Content was successfully created.' }
-        format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +43,8 @@ class ContentsController < ApplicationController
     respond_to do |format|
       if @content.update(content_params)
         format.html { redirect_to @content, notice: 'Content was successfully updated.' }
-        format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +55,6 @@ class ContentsController < ApplicationController
     @content.destroy
     respond_to do |format|
       format.html { redirect_to contents_url, notice: 'Content was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -70,5 +67,11 @@ class ContentsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def content_params
       params.require(:content).permit(:titolo, :descrizione, :price)
+    end
+
+    def check_user
+      if current_user != @content.user
+        redirect_to root_url, alert: "Scusa ma non hai accesso a questa pagina"
+      end
     end
 end
