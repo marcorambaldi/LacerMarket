@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Immagine</th>
       <th>Titolo</th>
       <th>Descrizione</th>
       <th>Utente</th>
@@ -16,14 +17,15 @@
   <tbody>
     <% @contents.each do |content| %>
       <tr>
+        <td><%= image_tag content.cover.url(:thumb) %></td>
         <td><%= content.titolo %></td>
         <td><%= content.descrizione %></td>
         <td><%= content.user.name %></td>
         <td><%= content.price %></td>
         <td><%= link_to 'Mostra', content %></td>
         <% if content.user == current_user %>
-          <td><%= link_to 'Edit', edit_content_path(content) %></td>
-          <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Sei sicuro di cancellare?' } %></td>
+          <td><%= link_to 'Modifica', edit_content_path(content) %></td>
+          <td><%= link_to 'Elimina', content, method: :delete, data: { confirm: 'Sei sicuro di cancellare?' } %></td>
         <% end %>
       </tr>
     <% end %>

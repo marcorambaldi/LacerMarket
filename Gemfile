@@ -66,3 +66,6 @@ gem 'materialize-sass', '~> 1.0.0'
 
 # Devise
 gem 'devise'
+
+# Paperclip
+gem "paperclip", "~> 6.0.0"
