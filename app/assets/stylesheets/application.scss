@@ -29,6 +29,11 @@ body {
     flex: 1 0 auto;
   }
 
+  .carousel-item > img {
+    width: 550px;
+    height: 600px;
+  }
+
   .btn-devise {
   	width: 100%;	
   }
@@ -37,7 +42,7 @@ body {
     padding-right: 5%;
   }
 
-   .show-titolo {
+  .show-titolo {
     margin-top: 0;
     font-size: 3.4em;
   }
@@ -49,4 +54,8 @@ body {
 
   .btn-form {
     width: 100%;
+  }
+
+  .card-image {
+    height: 150px;
   }

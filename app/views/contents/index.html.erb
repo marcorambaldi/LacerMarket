@@ -11,7 +11,7 @@
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">more_vert</i></span>
           <div>
-            <span>Venduto da <%= content.user.name %></span>
+            <span class="venditore">Venduto da <%= content.user.name %></span>
             <span class="right"><%= number_to_currency(content.price) %></span>
           </div>
 
@@ -35,4 +35,7 @@
       </div>
     </div>
   <% end %>
+</div>
+<div class="center">
+  <%= will_paginate @contents %>
 </div>
