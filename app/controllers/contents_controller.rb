@@ -30,7 +30,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to @content, notice: 'Il contenuto è stato creato con successo.' }
       else
         format.html { render :new }
       end
@@ -42,7 +42,7 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to @content, notice: 'Il contenuto è stato aggiornato con successo.' }
       else
         format.html { render :edit }
       end
@@ -54,7 +54,7 @@ class ContentsController < ApplicationController
   def destroy
     @content.destroy
     respond_to do |format|
-      format.html { redirect_to contents_url, notice: 'Content was successfully destroyed.' }
+      format.html { redirect_to contents_url, notice: 'Il contenuto è stato eliminato.' }
     end
   end
 
