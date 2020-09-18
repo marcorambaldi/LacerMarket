@@ -79,3 +79,9 @@ gem 'friendly_id', '~> 5.4.0'
 
 #Development security
 gem 'dotenv-rails', groups: [:development, :test]
+
+#Stripe
+gem 'stripe'
+
+#aasm state security
+gem 'aasm'
