@@ -95,5 +95,9 @@ gem 'stripe'
 #aasm state security
 gem 'aasm'
 
+#jQuery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
+
+# amazon s3
+gem 'aws-sdk', '~> 2.3'
