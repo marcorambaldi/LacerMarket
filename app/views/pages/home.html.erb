@@ -1,9 +1,29 @@
 <!--<h1 class="center">Questa è la nostra homepage</h1>-->
-<div class="carousel carousel-slider">
-	<% @contents.each do |content| %>
-			<%= link_to image_tag(content.cover.url), content_path(content), class: "carousel-item responsive-img" %>
-	<% end %>
-</div>
+<% if @contents.count >0 %>
+	<div class="carousel carousel-slider">
+		<% @contents.each do |content| %>
+				<%= link_to image_tag(content.cover.url), content_path(content), class: "carousel-item responsive-img" %>
+		<% end %>
+	</div>
+<%else %>
+	<div id="index-banner" class="parallax-container">
+		<div class="section no-pad-bot">
+		  <div class="container">
+		    <br><br>
+		    <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+		    <div class="row center">
+		      <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+		    </div>
+		    <div class="row center">
+		      <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+		    </div>
+		    <br><br>
+
+		  </div>
+		</div>
+	<div class="parallax"><%= image_tag("tacchi-alti-neri-chiusi-made-in-italy.jpg") %></div>
+	</div>
+<% end %>
 <h4 class="center">Come funziona LacerMarket?</h4>
 <div class="row">
 	<div class="col s12 m4">
