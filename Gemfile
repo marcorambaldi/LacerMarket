@@ -101,3 +101,5 @@ gem 'rails-ujs', '~> 0.1.0'
 
 # amazon s3
 gem 'aws-sdk-s3', '< 2.0'
+
+gem 'font-awesome-sass'
