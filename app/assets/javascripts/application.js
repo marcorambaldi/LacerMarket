@@ -16,3 +16,7 @@
 //= require_tree .
 //= require jquery
 //= require materialize
+
+$(document).ready(function(){
+    $('.parallax').parallax();
+});

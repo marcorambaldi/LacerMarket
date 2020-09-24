@@ -19,19 +19,28 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Raleway', sans-serif;
   }
 
   h1 {
     font-size: 3em;
   }
 
+  h2 {
+    font-size: 2em;
+  }
+
   main {
     flex: 1 0 auto;
   }
 
+  .home-subtitle {
+    margin: 5% 0 0 0;
+  }
+
   .carousel-item > img {
-    width: 550px;
-    height: 600px;
+    max-height: 300px;
+    max-width: 300px;
   }
 
   .btn-devise {
