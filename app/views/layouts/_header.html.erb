@@ -7,7 +7,26 @@
       <ul class="right hide-on-med-and-down">
         <li><%= link_to 'Vendi Contenuto', new_content_path %></li>
         <% if user_signed_in? %>
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <ul id="dropdown1" class="dropdown-content">
+            <li><%= link_to 'Dashboard', dashboard_path %></li>
+            <li><%= link_to 'Impostazioni', edit_user_registration_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><<%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a></li>
+        <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Registrazione", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+      <ul class="sidenav" id="mobile-demo">
+        <li><%= link_to 'Vendi Contenuto', new_content_path %></li>
+        <% if user_signed_in? %>
+
+            <li><%= link_to 'Dashboard', dashboard_path %></li>
+            <li><%= link_to 'Impostazioni', edit_user_registration_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Log In", new_user_session_path %></li>
           <li><%= link_to "Registrazione", new_user_registration_path %></li>
@@ -16,13 +35,3 @@
     </div>
   </nav> 
 </header>
-
-<ul class="sidenav" id="mobile-demo">
-  <li><%= link_to 'Vendi Contenuto', new_content_path %></li>
-  <% if user_signed_in? %>
-    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-  <% else %>
-    <li><%= link_to "Log In", new_user_session_path %></li>
-    <li><%= link_to "Registrazione", new_user_registration_path %></li>
-  <% end %>
-</ul>

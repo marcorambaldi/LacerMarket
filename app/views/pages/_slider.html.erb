@@ -5,6 +5,10 @@
 					<%= link_to image_tag(content.cover.url), content_path(content), class: "carousel-item responsive-img" %>
 			<% end %>
 		</div>
+		<br>
+		<div class="row center">
+	      <%= link_to 'Vai ai contenuti', contents_path, class: "btn red btn-large" %>
+	    </div>
 	<% else %>
 		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">

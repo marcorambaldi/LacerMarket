@@ -71,6 +71,7 @@ body {
   .card-image {
     max-width: 190px;
     max-height: 190px;
+    padding-left: 20%;
   }
 
   .fa-social {
@@ -80,5 +81,15 @@ body {
   @media (max-width: 600px) {
     .fa-social {
     padding: 0 10%;
+    }
   }
+  
+  nav .brand-logo {
+    padding-left: 5px;
+  }
+
+  @media (max-width: 600px) {
+    nav .brand-logo {
+      padding-left: 10%;
+    }
   }

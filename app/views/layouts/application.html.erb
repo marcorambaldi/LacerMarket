@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
 
   </head>
 
@@ -18,7 +18,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
     <%= render "layouts/header" %>
+
     <%= render "pages/slider" if action_name == 'home' %>
+    
     <main class="container">
       <%= yield %>
     </main>
@@ -41,4 +43,17 @@
       </script>
     <% end %>
   </div>
+  <script>
+    $(document).ready(function(){
+       $('.parallax').parallax();
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+       $('.tabs').tabs();
+    });
+  </script>
+  <script>
+    $(".dropdown-trigger").dropdown();
+  </script>
 </html>
