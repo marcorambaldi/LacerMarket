@@ -15,15 +15,6 @@
           <br>
 
           <div class="center"><%= link_to 'Scopri di più', content, class: "btn" %></div>
-            <% if content.user == current_user %>
-
-              <br>
-
-              <div class="center">
-                <p><%= link_to 'Modifica', edit_content_path(content) %>
-                <%= link_to 'Elimina', content, method: :delete, data: { confirm: 'Sei sicuro di cancellare?' } %></p>
-              </div>
-            <% end %>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">close</i></span>

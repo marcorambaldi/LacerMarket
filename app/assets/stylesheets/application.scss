@@ -33,6 +33,10 @@ body {
     font-size: 2em;
   }
 
+  h4 {
+    font-size: 1.2em;
+  }
+
   main {
     flex: 1 0 auto;
   }
@@ -48,6 +52,10 @@ body {
 
   .content-show {
     margin-top: 5%;
+  }
+
+  .dropdown-content {
+    min-width: 150px;
   }
 
   .btn-devise {
